@@ -1,10 +1,11 @@
-package es.kairos.prices.infraestructure.controller;
+package es.kairos.prices.infrastructure.controller;
 
 import es.kairos.prices.application.GetPriceUseCase;
 import es.kairos.prices.application.PriceInput;
-import es.kairos.prices.infraestructure.dto.PriceRequestDTO;
-import es.kairos.prices.infraestructure.dto.PriceResponseDTO;
-import es.kairos.prices.infraestructure.mappers.PriceMapper;
+import es.kairos.prices.application.PriceOutput;
+import es.kairos.prices.infrastructure.dto.PriceRequestDTO;
+import es.kairos.prices.infrastructure.dto.PriceResponseDTO;
+import es.kairos.prices.infrastructure.mappers.PriceInfrastructureMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,11 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PriceController {
   
   private GetPriceUseCase getPriceUseCase;
-  private PriceMapper priceMapper;
+  private PriceInfrastructureMapper priceInfrastructureMapper;
   
   @GetMapping("")
   ResponseEntity<PriceResponseDTO> getPrice(@RequestBody PriceRequestDTO priceRequestDTO) {
-    PriceInput priceInput = priceMapper.toPriceInput(priceRequestDTO);
-    return ResponseEntity.ok().body(getPriceUseCase.getPrice(priceInput));
+    PriceInput priceInput = priceInfrastructureMapper.toPriceInput(priceRequestDTO);
+    PriceOutput priceOutput = getPriceUseCase.getPrice((priceInput));
+    return ResponseEntity.ok().body(priceInfrastructureMapper.toPriceResponseDTO(priceOutput));
   }
 }
