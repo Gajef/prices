@@ -1,16 +1,21 @@
 package es.kairos.prices.application;
+import es.kairos.prices.domain.Price;
 
-import es.kairos.prices.infrastructure.dto.PriceResponseDTO;
+import java.util.Objects;
 
 public class PriceApplicationMapper {
-    public PriceResponseDTO toPriceResponseDTO(PriceOutput priceOutput){
-        return new PriceResponseDTO(
-                priceOutput.getProductId(),
-                priceOutput.getBrandId(),
-                priceOutput.getPriceList(), 
-                priceOutput.getStartDate(),
-                priceOutput.getEndDate(),
-                priceOutput.getPrice()
-        );
+    public PriceOutput toPriceOutput(Price price){
+        if (Objects.isNull(price)) 
+            return null;
+        else {
+            return new PriceOutput(
+                    price.getProductID(),
+                    price.getBrandID(),
+                    price.getPriceList(),
+                    price.getStartDate(),
+                    price.getEndDate(),
+                    price.getPrice()
+            );
+        }
     }
 }
