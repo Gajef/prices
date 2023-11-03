@@ -1,4 +1,4 @@
-package es.kairos.prices.ui;
+package es.kairos.prices.infraestructure.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
