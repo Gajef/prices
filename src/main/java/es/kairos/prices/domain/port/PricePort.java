@@ -1,4 +1,6 @@
-package es.kairos.prices.domain;
+package es.kairos.prices.domain.port;
+
+import es.kairos.prices.domain.model.Price;
 
 import java.time.LocalDateTime;
 
