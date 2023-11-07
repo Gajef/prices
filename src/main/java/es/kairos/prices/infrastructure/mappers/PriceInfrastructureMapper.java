@@ -2,8 +2,10 @@ package es.kairos.prices.infrastructure.mappers;
 
 import es.kairos.prices.application.PriceInput;
 import es.kairos.prices.application.PriceOutput;
+import es.kairos.prices.domain.model.Price;
 import es.kairos.prices.infrastructure.dto.PriceRequestDTO;
 import es.kairos.prices.infrastructure.dto.PriceResponseDTO;
+import es.kairos.prices.infrastructure.entities.PriceEntity;
 
 import java.util.Objects;
 
@@ -34,4 +36,21 @@ public class PriceInfrastructureMapper {
             );
         }
     }
+    public Price toPrice(PriceEntity priceEntity){
+        if (Objects.isNull(priceEntity)){
+            return null;
+        } else {
+            return new Price(
+                    priceEntity.getBrandID(),
+                    priceEntity.getStartDate(),
+                    priceEntity.getEndDate(),
+                    priceEntity.getPriceList(),
+                    priceEntity.getProductID(),
+                    priceEntity.getPriority(),
+                    priceEntity.getPrice(),
+                    priceEntity.getCurr()
+            );
+        }
+    }
+    
 }
