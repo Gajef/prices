@@ -1,7 +1,6 @@
 package es.kairos.prices.application;
 
-import es.kairos.prices.domain.PriceService;
-import es.kairos.prices.infrastructure.dto.PriceResponseDTO;
+import es.kairos.prices.domain.service.PriceService;
 
 public class GetPriceUseCase {
     
