@@ -1,7 +1,7 @@
-package es.kairos.prices.domain;
+package es.kairos.prices.domain.service;
 
-import es.kairos.prices.application.PriceInput;
-import es.kairos.prices.application.PriceOutput;
+import es.kairos.prices.domain.model.Price;
+import es.kairos.prices.domain.port.PricePort;
 
 import java.time.LocalDateTime;
 
