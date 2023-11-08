@@ -49,7 +49,7 @@ public class DatabaseInitializer {
     
     private  List<List<String>> readCSV(){
         List<List<String>> prices = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/es/kairos/prices/utils/prices_ (3).csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/java/es/kairos/prices/utils/prices_(3).csv"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
