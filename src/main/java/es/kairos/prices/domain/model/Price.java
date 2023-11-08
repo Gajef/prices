@@ -1,4 +1,4 @@
-package es.kairos.prices.domain;
+package es.kairos.prices.domain.model;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -16,7 +16,7 @@ public class Price {
     private int priceList;
     private int productID;
     private int priority;
-    private int price;
+    private float price;
     private String curr;
     
 }
