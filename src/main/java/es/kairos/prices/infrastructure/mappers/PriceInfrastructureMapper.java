@@ -6,9 +6,13 @@ import es.kairos.prices.domain.model.Price;
 import es.kairos.prices.infrastructure.dto.PriceRequestDTO;
 import es.kairos.prices.infrastructure.dto.PriceResponseDTO;
 import es.kairos.prices.infrastructure.entities.PriceEntity;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+@Component("priceInfrastructureMapper")
+@AllArgsConstructor
 public class PriceInfrastructureMapper {
     public PriceInput toPriceInput(PriceRequestDTO priceRequestDTO){
         if (Objects.isNull(priceRequestDTO)) 

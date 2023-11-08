@@ -1,8 +1,10 @@
 package es.kairos.prices.application;
-import es.kairos.prices.domain.Price;
+import es.kairos.prices.domain.model.Price;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
+@Component
 public class PriceApplicationMapper {
     public PriceOutput toPriceOutput(Price price){
         if (Objects.isNull(price)) 
