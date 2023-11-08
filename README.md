@@ -68,3 +68,4 @@ Se valorará:
 
 Este proyecto ha sido realizado en **Java 17**. Se ha utilizado además **SpringBoot (Maven)** como framework.
 Para permitir la independecia entre capas he usado **Arquitectura Hexagonal** y he usado **Lombok** para facilitar la escritura de código.
+Los test al endpoint están hechos con **Postman**. Además he añadido los casos de prueba correspondientes a los datos iniciales.
